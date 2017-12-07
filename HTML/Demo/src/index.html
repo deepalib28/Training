@@ -1,0 +1,37 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="C:\Users\dbhavsar\Desktop\Training\HTML\Demo\component\style.css">
+    </head>
+
+    <body>
+        <div id='displayTime'></div>
+
+        <button id='btnTime' onclick="displayTime()">Get the Time</button>
+
+        <div class='main-container'>
+            <div class='header-container'>
+                <div class="item-content">Hello</div>
+                <div class="item-content">World</div>
+            </div>
+            <div>
+                <img class='image-content' src='https://cdn.pixabay.com/photo/2017/03/06/11/00/self-confidence-2121159_960_720.jpg' alt='Image is not loaded'>
+            </div>
+        </div>
+
+        <script>
+            var getTime=function()
+            {
+                //HH:MM:SS
+                var now= new Date();
+                return now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
+            }
+            function displayTime()
+            { 
+                var time=document.getElementById('displayTime');
+                time.innerHTML=getTime();
+               // setTimeout(() => {populateTime()}, 1000);
+               setTimeout(() => displayTime(), 1000);
+            }
+        </script>
+    </body>
+</html>
